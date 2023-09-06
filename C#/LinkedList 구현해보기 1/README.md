@@ -43,7 +43,7 @@ MylistNode 클래스의 인스턴스들을 가지며 시작 노드와 끝 노드
 
 클래스 멤버 변수를 살펴보면 아래와 같이 시작 노드, 끝 노드, 전체 노드의 개수만을 기억하고 있다.
 
-```
+```C#
 class MyList<T>
 {
     private MylistNode<T>? _First = null;
@@ -61,7 +61,7 @@ class MyList<T>
 
 제공해주는 LinkedList의 AddLast 메소드 구조를 살펴보면
 
-```
+```C#
 public LinkedListNode<T> AddLast(T value){}
 public void AddLast(LinkedListNode<T> node){}
 ```
@@ -70,7 +70,7 @@ public void AddLast(LinkedListNode<T> node){}
 
 살펴보면 두 방식 모두 LinkedListNode 타입으로 관리를 하는 것을 확인할 수 있다. 
 
-```
+```C#
 public bool Remove(T value){}
 public void Remove(LinkedListNode<T> node){}
 ```
@@ -89,7 +89,7 @@ Remove 메소드도 마찬가지로 노드를 입력하는 방식과 값을 입�
 
 노드를 반환하는 AddLast 부터 구현해보면
 
-```
+```C#
 public MylistNode<T> AddLast(T item)
 {
     MylistNode<T> newNode = new MylistNode<T>();
@@ -127,7 +127,7 @@ public MylistNode<T> AddLast(T item)
 
 노드를 반환하지 않는 AddLast는 
 
-```
+```C#
 public void AddLast(MylistNode<T> node)
 {
     if(_First == null)
@@ -151,7 +151,7 @@ public void AddLast(MylistNode<T> node)
 
 반환이 없는 Remove를 보면
 
-```
+```C#
 public void Remove(MylistNode<T> node)
 {
     node.Prev.Next = node.Next;
@@ -170,7 +170,7 @@ public void Remove(MylistNode<T> node)
 
 bool 타입의 T 타입 매개변수를 입력으로 받는 Remove의 구현을 보면
 
-```
+```C#
 public bool Remove(T item)
 {
     MylistNode<T> thisNode = _First;     1️⃣
@@ -210,7 +210,7 @@ public bool Remove(T item)
 
 LinkedList의 실제 메소드는 어떤 식으로 동등성을 다루는 지 확인해보니
 
-```
+```C#
 public LinkedListNode<T>? Find(T value)
 {
     LinkedListNode<T>? node = head;
